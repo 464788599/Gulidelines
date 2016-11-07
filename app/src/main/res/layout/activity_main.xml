@@ -3,28 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".activity.MainActivity">
 
     <LinearLayout
+        tools:visibility="gone"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <include
-            android:layout_width="300dp"
+            android:id="@+id/layout_sliding_content"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             layout="@layout/layout_slidingmenu"/>
 
         <LinearLayout
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
             <FrameLayout
+                android:layout_gravity="center"
                 android:id="@+id/layout_safe"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/darker_gray">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_35_dip"
+                    android:textColor="@android:color/black"
+                    android:text="Content"/>
                 <android.support.v4.view.ViewPager
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
