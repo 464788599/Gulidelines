@@ -9,7 +9,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/dimen_55_dip"
+        android:text="SlidingMenu"
         android:textColor="@android:color/white"
-        android:text="SlidingMenu"/>
+        android:textSize="@dimen/px_positive_150" />
+
 </LinearLayout>

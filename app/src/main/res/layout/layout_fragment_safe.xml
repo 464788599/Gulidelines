@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_safe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:background="@color/Color_FF1C6365"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_positive_140"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:civ_border_width="@dimen/px_positive_2"
+            app:civ_border_color="@android:color/white"
+            android:id="@+id/iv_menu"
+            android:layout_width="@dimen/px_positive_100"
+            android:layout_height="@dimen/px_positive_100"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/px_positive_20"
+            android:src="@android:color/darker_gray" />
+        <LinearLayout
+            android:layout_marginLeft="@dimen/px_positive_50"
+            android:layout_marginRight="@dimen/px_positive_50"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/iv_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:textColor="@color/Black"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="@dimen/px_positive_40"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Function1"/>
+            <TextView
+                android:textColor="@color/Black"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Function2"/>
+            <TextView
+                android:textColor="@color/Black"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Function3"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
