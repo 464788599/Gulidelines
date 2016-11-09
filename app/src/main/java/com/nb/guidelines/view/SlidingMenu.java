@@ -19,6 +19,7 @@ public class SlidingMenu extends HorizontalScrollView {
     public int orientation;
     float downX = 0;
     float upX = 0;
+
     public SlidingMenu(Context context) {
         super(context);
     }
@@ -61,10 +62,10 @@ public class SlidingMenu extends HorizontalScrollView {
             case MotionEvent.ACTION_MOVE:
                 if ((ev.getX() - downX) > DeviceUtil.dp2Px(10)) {
                     orientation = LEFT_TO_RIGHT;
-                    Log.i(LOG_GET,"LEFT_TO_RIGHT");
+                    Log.i(LOG_GET, "LEFT_TO_RIGHT");
                 } else if ((downX - ev.getX()) > DeviceUtil.dp2Px(10)) {
                     orientation = RIGHT_TO_LEFT;
-                    Log.i(LOG_GET,"RIGHT_TO_LEFT");
+                    Log.i(LOG_GET, "RIGHT_TO_LEFT");
                 }
                 break;
             case MotionEvent.ACTION_UP:
@@ -72,9 +73,8 @@ public class SlidingMenu extends HorizontalScrollView {
                 //LEFT_TO_RIGHT
                 if (upX > downX) {
                     if ((upX - downX) >= DeviceUtil.dp2Px(150)) {
-
                         mySmoothScrollTo(0, 0);
-                    } else {
+                    } else if (getScrollX() != 0) {
                         mySmoothScrollTo(DeviceUtil.dp2Px(300), 0);
                     }
                 }
@@ -83,7 +83,7 @@ public class SlidingMenu extends HorizontalScrollView {
                 if (downX > upX) {
                     if ((downX - upX) >= DeviceUtil.dp2Px(100)) {
                         mySmoothScrollTo(DeviceUtil.dp2Px(300), 0);
-                    } else {
+                    } else if (getScrollX() < 300) {
                         mySmoothScrollTo(0, 0);
                     }
                 }

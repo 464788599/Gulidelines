@@ -18,37 +18,11 @@
             android:layout_height="match_parent"
             layout="@layout/layout_slidingmenu"/>
 
-        <LinearLayout
-            android:gravity="center"
-            android:layout_width="match_parent"
+        <include
+            android:id="@+id/layout_main_content"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-            <FrameLayout
-                android:layout_gravity="center"
-                android:id="@+id/layout_safe"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/darker_gray">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/dimen_35_dip"
-                    android:textColor="@android:color/black"
-                    android:text="Content"/>
-                <android.support.v4.view.ViewPager
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </FrameLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:background="@android:color/holo_green_dark">
-
-            </RelativeLayout>
-        </LinearLayout>
+            layout="@layout/layout_main_content"/>
 
     </LinearLayout>
 
